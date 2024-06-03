@@ -1,0 +1,20 @@
+2024-May-30 - 2024-May-31
+	Allow running indoors
+	Push R to Toggle Running Shoes
+	Full PC Access (PSS) in Brendan/May's Houses
+	Display Next Pokémon on Battle Switch Dialog
+	Prompt for reusing Repels
+	Colored stats by nature in summary screen
+	Showing IVs/EVs in Summary Screen
+2024-May-31 - 2024-Jun-01
+	Move Description Submenu in Battle
+	Show Species That You're Switching For in the Party Menu
+	Infinite TM usage and unsellable
+	Button Press to Skip Copyright Screen
+	Bonus Premier Balls per Multiple of 10
+	Displaying the power of Frustration/Return in the Summary Screen
+	"Move Pokémon" as first PSS option
+2024-Jun-01
+	Physical Special Split
+	Physical Special Split Icons In Battle
+	Physical Special Split Icons In Summary - Beta

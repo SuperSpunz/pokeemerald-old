@@ -2490,10 +2490,26 @@ void DisplayPartyMenuStdMessage(u32 stringId)
 
         if (stringId == PARTY_MSG_CHOOSE_MON)
         {
+            u8 enemyNextMonID = *(gBattleStruct->monToSwitchIntoId + B_SIDE_OPPONENT);
+            u16 species = GetMonData(&gEnemyParty[enemyNextMonID], MON_DATA_SPECIES);
             if (sPartyMenuInternal->chooseHalf)
                 stringId = PARTY_MSG_CHOOSE_MON_AND_CONFIRM;
             else if (!ShouldUseChooseMonText())
                 stringId = PARTY_MSG_CHOOSE_MON_OR_CANCEL;
+            
+           else if (gMain.inBattle){
+               // Checks if the opponent is sending out a new pokemon.
+               if (species >= NUM_SPECIES ||  species == SPECIES_NONE){
+                   species = gBattleMons[B_SIDE_OPPONENT].species;
+                   // Now tries to check if there's any opposing pokemon on the field
+                   if (species >= NUM_SPECIES ||  species == SPECIES_NONE || gBattleTypeFlags & BATTLE_TYPE_DOUBLE)
+                       stringId = PARTY_MSG_CHOOSE_MON_2;  // No species on the other side, show the default text.
+               }
+               if (stringId == PARTY_MSG_CHOOSE_MON)
+                   StringCopy(gStringVar2, gSpeciesNames[species]);
+           }
+           else
+               stringId = PARTY_MSG_CHOOSE_MON_2;
         }
         DrawStdFrameWithCustomTileAndPalette(*windowPtr, FALSE, 0x4F, 13);
         StringExpandPlaceholders(gStringVar4, sActionStringTable[stringId]);
@@ -4775,8 +4791,6 @@ static void Task_LearnedMove(u8 taskId)
     if (move[1] == 0)
     {
         AdjustFriendship(mon, FRIENDSHIP_EVENT_LEARN_TMHM);
-        if (item < ITEM_HM01)
-            RemoveBagItem(item, 1);
     }
     GetMonNickname(mon, gStringVar1);
     StringCopy(gStringVar2, gMoveNames[move[0]]);
@@ -4881,13 +4895,17 @@ static void Task_PartyMenuReplaceMove(u8 taskId)
 {
     struct Pokemon *mon;
     u16 move;
+    u8 oldPP;
 
     if (IsPartyMenuTextPrinterActive() != TRUE)
     {
         mon = &gPlayerParty[gPartyMenu.slotId];
         RemoveMonPPBonus(mon, GetMoveSlotToReplace());
+        oldPP = GetMonData(mon, MON_DATA_PP1 + GetMoveSlotToReplace(), NULL);
         move = gPartyMenu.data1;
         SetMonMoveSlot(mon, move, GetMoveSlotToReplace());
+        if (GetMonData(mon, MON_DATA_PP1 + GetMoveSlotToReplace(), NULL) > oldPP)
+            SetMonData(mon, MON_DATA_PP1 + GetMoveSlotToReplace(), &oldPP);
         Task_LearnedMove(taskId);
     }
 }

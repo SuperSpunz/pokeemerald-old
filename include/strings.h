@@ -31,6 +31,11 @@ extern const u8 gText_WasEnhanced[];
 extern const u8 gText_NothingChanged[];
 extern const u8 gText_NatureSlash[];
 
+extern const u8 gText_Category[];
+extern const u8 gText_CategoryPhysical[];
+extern const u8 gText_CategorySpecial[];
+extern const u8 gText_CategoryStatus[];
+
 extern const u8 gText_Cool[];
 extern const u8 gText_Beauty[];
 extern const u8 gText_Cute[];
@@ -1013,10 +1018,12 @@ extern const u8 gText_InBagVar1[];
 extern const u8 gText_Var1AndYouWantedVar2[];
 extern const u8 gText_HereYouGoThankYou[];
 extern const u8 gText_NoMoreRoomForThis[];
+extern const u8 gText_YouAlreadyHaveThis[];
 extern const u8 gText_ThankYouIllSendItHome[];
 extern const u8 gText_ThanksIllSendItHome[];
 extern const u8 gText_SpaceForVar1Full[];
 extern const u8 gText_ThrowInPremierBall[];
+extern const u8 gText_ThrowInPremierBalls[];
 extern const u8 gText_ShopBuy[];
 extern const u8 gText_ShopSell[];
 extern const u8 gText_ShopQuit[];
