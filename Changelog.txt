@@ -18,3 +18,11 @@
 	Physical Special Split
 	Physical Special Split Icons In Battle
 	Physical Special Split Icons In Summary
+	2024-Jun-03
+	Bag-Sort
+2024-Jun-05
+	Follower Pokemon
+	Day/Night Cycle
+	Wall Clock
+	Gen4-Bike
+	Fixed Movement Directions
