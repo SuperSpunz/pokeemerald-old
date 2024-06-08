@@ -245,6 +245,10 @@
 #define METATILE_General_YellowCaveOpen        0x1A9
 
 // gTileset_GenericBuilding
+#define METATILE_GenericBuilding_DEOXYS_ATTACK           0x33C
+#define METATILE_GenericBuilding_DEOXYS_DEFENSE          0x33D
+#define METATILE_GenericBuilding_DEOXYS_NORMAL           0x33B
+#define METATILE_GenericBuilding_DEOXYS_SPEED            0x33E
 #define METATILE_GenericBuilding_TableEdge               0x2F1
 #define METATILE_GenericBuilding_TrickHouse_Door_Closed  0x21B
 #define METATILE_GenericBuilding_TrickHouse_Stairs_Down  0x219
