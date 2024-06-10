@@ -4568,6 +4568,63 @@ static const union AnimCmd sAnim_Deoxys_2[] =
     ANIMCMD_END,
 };
 
+static const union AnimCmd sAnim_DeoxysAttack_1[] =
+{
+    ANIMCMD_FRAME(0, 16),
+    ANIMCMD_FRAME(1, 16),
+    ANIMCMD_FRAME(0, 26),
+    ANIMCMD_FRAME(1, 16),
+    ANIMCMD_FRAME(0, 16),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_DeoxysAttack_2[] =
+{
+    ANIMCMD_FRAME(0, 20),
+    ANIMCMD_FRAME(2, 20),
+    ANIMCMD_FRAME(0, 20),
+    ANIMCMD_FRAME(2, 20),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_DeoxysDefense_1[] =
+{
+    ANIMCMD_FRAME(0, 16),
+    ANIMCMD_FRAME(1, 16),
+    ANIMCMD_FRAME(0, 26),
+    ANIMCMD_FRAME(1, 16),
+    ANIMCMD_FRAME(0, 16),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_DeoxysDefense_2[] =
+{
+    ANIMCMD_FRAME(0, 20),
+    ANIMCMD_FRAME(2, 20),
+    ANIMCMD_FRAME(0, 20),
+    ANIMCMD_FRAME(2, 20),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_DeoxysSpeed_1[] =
+{
+    ANIMCMD_FRAME(0, 16),
+    ANIMCMD_FRAME(1, 16),
+    ANIMCMD_FRAME(0, 26),
+    ANIMCMD_FRAME(1, 16),
+    ANIMCMD_FRAME(0, 16),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_DeoxysSpeed_2[] =
+{
+    ANIMCMD_FRAME(0, 20),
+    ANIMCMD_FRAME(2, 20),
+    ANIMCMD_FRAME(0, 20),
+    ANIMCMD_FRAME(2, 20),
+    ANIMCMD_END,
+};
+
 static const union AnimCmd sAnim_Chimecho_1[] =
 {
     ANIMCMD_FRAME(0, 15),
@@ -5222,6 +5279,9 @@ DOUBLE_ANIMATION(Latias);
 DOUBLE_ANIMATION(Latios);
 DOUBLE_ANIMATION(Jirachi);
 DOUBLE_ANIMATION(Deoxys);
+DOUBLE_ANIMATION(DeoxysAttack);
+DOUBLE_ANIMATION(DeoxysDefense);
+DOUBLE_ANIMATION(DeoxysSpeed);
 SINGLE_ANIMATION(Chimecho);
 SINGLE_ANIMATION(Egg);
 SINGLE_ANIMATION(UnownB);
@@ -5664,7 +5724,10 @@ const union AnimCmd *const *const gMonFrontAnimsPtrTable[] =
     [SPECIES_LATIAS]      = sAnims_Latias,
     [SPECIES_LATIOS]      = sAnims_Latios,
     [SPECIES_JIRACHI]     = sAnims_Jirachi,
-    [SPECIES_DEOXYS]      = sAnims_Deoxys,
+    [SPECIES_DEOXYS_NORMAL]  = sAnims_Deoxys,
+    [SPECIES_DEOXYS_ATTACK]  = sAnims_DeoxysAttack,
+    [SPECIES_DEOXYS_DEFENSE] = sAnims_DeoxysDefense,
+    [SPECIES_DEOXYS_SPEED]   = sAnims_DeoxysSpeed,
     [SPECIES_CHIMECHO]    = sAnims_Chimecho,
     [SPECIES_EGG]         = sAnims_Egg,
     [SPECIES_UNOWN_B]     = sAnims_UnownB,

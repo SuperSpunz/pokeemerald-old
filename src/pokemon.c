@@ -1788,7 +1788,10 @@ static const u8 sMonFrontAnimIdsTable[NUM_SPECIES - 1] =
     [SPECIES_LATIAS - 1]      = ANIM_SWING_CONCAVE_FAST_SHORT,
     [SPECIES_LATIOS - 1]      = ANIM_V_SHAKE,
     [SPECIES_JIRACHI - 1]     = ANIM_SWING_CONVEX,
-    [SPECIES_DEOXYS - 1]      = ANIM_H_PIVOT,
+    [SPECIES_DEOXYS_NORMAL - 1]  = ANIM_H_PIVOT,
+    [SPECIES_DEOXYS_ATTACK - 1]  = ANIM_H_PIVOT,
+    [SPECIES_DEOXYS_DEFENSE - 1] = ANIM_H_PIVOT,
+    [SPECIES_DEOXYS_SPEED - 1]   = ANIM_H_PIVOT,
     [SPECIES_CHIMECHO - 1]    = ANIM_H_SLIDE_WOBBLE,
 };
 
@@ -7025,6 +7028,9 @@ bool8 HasTwoFramesAnimation(u16 species)
 {
     return (species != SPECIES_CASTFORM
          && species != SPECIES_DEOXYS
+         && species != SPECIES_DEOXYS_ATTACK
+         && species != SPECIES_DEOXYS_DEFENSE
+         && species != SPECIES_DEOXYS_SPEED
          && species != SPECIES_SPINDA
          && species != SPECIES_UNOWN);
 }

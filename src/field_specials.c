@@ -4282,7 +4282,7 @@ u8 Script_TryGainNewFanFromCounter(void)
 // If these conditions aren't met, gSpecialVar_Result is set to FALSE meaning Deoxys' form didn't change.
 void TryChangeDeoxysForm(void)
 {
-#ifdef POKEMON_EXPANSION
+// #ifdef POKEMON_EXPANSION
     u16 baseSpecies = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPECIES);
     u16 targetSpecies;
     u8 metatileBehavior;
@@ -4323,5 +4323,5 @@ void TryChangeDeoxysForm(void)
     }
 
     gSpecialVar_Result = FALSE;
-#endif
+// #endif
 }
