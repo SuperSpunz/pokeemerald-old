@@ -2837,6 +2837,11 @@ static void PrintNotEggInfo(void)
     struct PokeSummary *summary = &sMonSummaryScreen->summary;
     u16 dexNum = SpeciesToPokedexNum(summary->species);
 
+    if (summary->species == SPECIES_DEOXYS_NORMAL || summary->species == SPECIES_DEOXYS_ATTACK || summary->species == SPECIES_DEOXYS_DEFENSE || summary->species == SPECIES_DEOXYS_SPEED)
+    {
+        dexNum = 0x0182;
+    }
+    
     if (dexNum != 0xFFFF)
     {
         StringCopy(gStringVar1, &gText_NumberClear01[0]);

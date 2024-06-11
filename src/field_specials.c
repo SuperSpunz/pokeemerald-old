@@ -4287,7 +4287,7 @@ void TryChangeDeoxysForm(void)
     u16 targetSpecies;
     u8 metatileBehavior;
 
-    if (baseSpecies == SPECIES_DEOXYS
+    if (baseSpecies == SPECIES_DEOXYS_NORMAL
      || baseSpecies == SPECIES_DEOXYS_ATTACK
      || baseSpecies == SPECIES_DEOXYS_DEFENSE
      || baseSpecies == SPECIES_DEOXYS_SPEED)
@@ -4300,7 +4300,7 @@ void TryChangeDeoxysForm(void)
         switch (metatileBehavior)
         {
             case MB_UNUSED_2C:
-                targetSpecies = SPECIES_DEOXYS;
+                targetSpecies = SPECIES_DEOXYS_NORMAL;
                 break;
             case MB_UNUSED_2D:
                 targetSpecies = SPECIES_DEOXYS_ATTACK;

@@ -2690,36 +2690,37 @@ const u32 gMonShinyPalette_Jirachi[] = INCBIN_U32("graphics/pokemon/jirachi/shin
 const u8 gMonIcon_Jirachi[] = INCBIN_U8("graphics/pokemon/jirachi/icon.4bpp");
 const u8 gMonFootprint_Jirachi[] = INCBIN_U8("graphics/pokemon/jirachi/footprint.1bpp");
 
-const u32 gMonStillFrontPic_Deoxys[] = INCBIN_U32("graphics/pokemon/deoxys/front.4bpp.lz");
-const u32 gMonPalette_Deoxys[] = INCBIN_U32("graphics/pokemon/deoxys/normal.gbapal.lz");
-const u32 gMonBackPic_Deoxys[] = INCBIN_U32("graphics/pokemon/deoxys/back.4bpp.lz");
-const u32 gMonShinyPalette_Deoxys[] = INCBIN_U32("graphics/pokemon/deoxys/shiny.gbapal.lz");
-const u8 gMonIcon_Deoxys[] = INCBIN_U8("graphics/pokemon/deoxys/icon.4bpp");
-const u8 gMonFootprint_Deoxys[] = INCBIN_U8("graphics/pokemon/deoxys/footprint.1bpp");
+const u32 gMonStillFrontPic_Deoxys[] = INCBIN_U32("graphics/pokemon/deoxys/normal/front.4bpp.lz");
+const u32 gMonPalette_Deoxys[] = INCBIN_U32("graphics/pokemon/deoxys/normal/normal.gbapal.lz");
+const u32 gMonBackPic_Deoxys[] = INCBIN_U32("graphics/pokemon/deoxys/normal/back.4bpp.lz");
+const u32 gMonShinyPalette_Deoxys[] = INCBIN_U32("graphics/pokemon/deoxys/normal/shiny.gbapal.lz");
+const u8 gMonIcon_Deoxys[] = INCBIN_U8("graphics/pokemon/deoxys/normal/icon.4bpp");
 
-const u32 gMonStillFrontPic_DeoxysAttack[] = INCBIN_U32("graphics/pokemon/deoxys/front.4bpp.lz");
+const u32 gMonStillFrontPic_DeoxysAttack[] = INCBIN_U32("graphics/pokemon/deoxys/attack/front.4bpp.lz");
 const u32 gMonPalette_DeoxysAttack[] = INCBIN_U32("graphics/pokemon/deoxys/attack/normal.gbapal.lz");
 const u32 gMonBackPic_DeoxysAttack[] = INCBIN_U32("graphics/pokemon/deoxys/attack/back.4bpp.lz");
 const u32 gMonShinyPalette_DeoxysAttack[] = INCBIN_U32("graphics/pokemon/deoxys/attack/shiny.gbapal.lz");
 const u8 gMonIcon_DeoxysAttack[] = INCBIN_U8("graphics/pokemon/deoxys/attack/icon.4bpp");
 
-const u32 gMonStillFrontPic_DeoxysDefense[] = INCBIN_U32("graphics/pokemon/deoxys/front.4bpp.lz");
+const u32 gMonStillFrontPic_DeoxysDefense[] = INCBIN_U32("graphics/pokemon/deoxys/defense/front.4bpp.lz");
 const u32 gMonPalette_DeoxysDefense[] = INCBIN_U32("graphics/pokemon/deoxys/defense/normal.gbapal.lz");
 const u32 gMonBackPic_DeoxysDefense[] = INCBIN_U32("graphics/pokemon/deoxys/defense/back.4bpp.lz");
 const u32 gMonShinyPalette_DeoxysDefense[] = INCBIN_U32("graphics/pokemon/deoxys/defense/shiny.gbapal.lz");
 const u8 gMonIcon_DeoxysDefense[] = INCBIN_U8("graphics/pokemon/deoxys/defense/icon.4bpp");
 
-const u32 gMonStillFrontPic_DeoxysSpeed[] = INCBIN_U32("graphics/pokemon/deoxys/front.4bpp.lz");
+const u32 gMonStillFrontPic_DeoxysSpeed[] = INCBIN_U32("graphics/pokemon/deoxys/speed/front.4bpp.lz");
 const u32 gMonPalette_DeoxysSpeed[] = INCBIN_U32("graphics/pokemon/deoxys/speed/normal.gbapal.lz");
 const u32 gMonBackPic_DeoxysSpeed[] = INCBIN_U32("graphics/pokemon/deoxys/speed/back.4bpp.lz");
 const u32 gMonShinyPalette_DeoxysSpeed[] = INCBIN_U32("graphics/pokemon/deoxys/speed/shiny.gbapal.lz");
-const u8 gMonIcon_DeoxysSpeed[] = INCBIN_U8("graphics/pokemon/deoxys/icon_speed.4bpp");
-const u8 gMonIcon_DeoxysSpeedWide[] = INCBIN_U8("graphics/pokemon/deoxys/icon_speed_wide.4bpp"); // Unused
+const u8 gMonIcon_DeoxysSpeed[] = INCBIN_U8("graphics/pokemon/deoxys/speed/icon.4bpp");
+const u8 gMonIcon_DeoxysSpeedWide[] = INCBIN_U8("graphics/pokemon/deoxys/speed/icon_speed_wide.4bpp"); // Unused
 
 // Probably the leftover space from the other Deoxys forms
 static const u8 sEmpty[0x6800] = {0};
 
 const u16 gMonUnusedGarbage[] = INCBIN_U16("graphics/pokemon/unused_garbage.bin");
+
+const u8 gMonFootprint_Deoxys[] = INCBIN_U8("graphics/pokemon/deoxys/footprint.1bpp");
 
 const u32 gMonStillFrontPic_Chimecho[] = INCBIN_U32("graphics/pokemon/chimecho/front.4bpp.lz");
 const u32 gMonPalette_Chimecho[] = INCBIN_U32("graphics/pokemon/chimecho/normal.gbapal.lz");

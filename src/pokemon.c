@@ -2697,14 +2697,14 @@ bool8 ShouldIgnoreDeoxysForm(u8 caseId, u8 battlerId)
 
     return TRUE;
 }
-
+/*
 static u16 GetDeoxysStat(struct Pokemon *mon, s32 statId)
 {
     s32 ivVal, evVal;
     u16 statValue = 0;
     u8 nature;
 
-    if (gBattleTypeFlags & BATTLE_TYPE_LINK_IN_BATTLE || GetMonData(mon, MON_DATA_SPECIES, NULL) != SPECIES_DEOXYS)
+    if (gBattleTypeFlags & BATTLE_TYPE_LINK_IN_BATTLE || GetMonData(mon, MON_DATA_SPECIES, NULL) != SPECIES_DEOXYS_NORMAL || GetMonData(mon, MON_DATA_SPECIES, NULL) != SPECIES_DEOXYS_ATTACK || GetMonData(mon, MON_DATA_SPECIES, NULL) != SPECIES_DEOXYS_DEFENSE || GetMonData(mon, MON_DATA_SPECIES, NULL) != SPECIES_DEOXYS_SPEED)
         return 0;
 
     ivVal = GetMonData(mon, MON_DATA_HP_IV + statId, NULL);
@@ -2742,7 +2742,7 @@ void SetDeoxysStats(void)
         SetMonData(mon, MON_DATA_SPDEF, &value);
     }
 }
-
+*/
 u16 GetUnionRoomTrainerPic(void)
 {
     u8 linkId;
@@ -3652,28 +3652,28 @@ u32 GetMonData3(struct Pokemon *mon, s32 field, u8 *data)
         ret = mon->maxHP;
         break;
     case MON_DATA_ATK:
-        ret = GetDeoxysStat(mon, STAT_ATK);
-        if (!ret)
+    //    ret = GetDeoxysStat(mon, STAT_ATK);
+    //    if (!ret)
             ret = mon->attack;
         break;
     case MON_DATA_DEF:
-        ret = GetDeoxysStat(mon, STAT_DEF);
-        if (!ret)
+    //    ret = GetDeoxysStat(mon, STAT_DEF);
+    //    if (!ret)
             ret = mon->defense;
         break;
     case MON_DATA_SPEED:
-        ret = GetDeoxysStat(mon, STAT_SPEED);
-        if (!ret)
+    //    ret = GetDeoxysStat(mon, STAT_SPEED);
+    //    if (!ret)
             ret = mon->speed;
         break;
     case MON_DATA_SPATK:
-        ret = GetDeoxysStat(mon, STAT_SPATK);
-        if (!ret)
+    //    ret = GetDeoxysStat(mon, STAT_SPATK);
+    //    if (!ret)
             ret = mon->spAttack;
         break;
     case MON_DATA_SPDEF:
-        ret = GetDeoxysStat(mon, STAT_SPDEF);
-        if (!ret)
+    //    ret = GetDeoxysStat(mon, STAT_SPDEF);
+    //    if (!ret)
             ret = mon->spDefense;
         break;
     case MON_DATA_ATK2:
