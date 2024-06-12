@@ -17,9 +17,13 @@
 #define ITEM_LUXURY_BALL 11
 #define ITEM_PREMIER_BALL 12
 
-#define LAST_BALL ITEM_PREMIER_BALL
+// Note: If moving ball IDs around, updating FIRST_BALL/LAST_BALL is not sufficient
+//       Several places expect the ball IDs to be first and contiguous (e.g. gBattlescriptsForBallThrow and MON_DATA_POKEBALL)
+//       If adding new balls, it's easiest to insert them after the last ball and increment the below IDs (and removing ITEM_034 for example)
+#define FIRST_BALL ITEM_MASTER_BALL
+#define LAST_BALL  ITEM_PREMIER_BALL
 
-// Pokemon Items
+// Pokémon Items
 #define ITEM_POTION 13
 #define ITEM_ANTIDOTE 14
 #define ITEM_BURN_HEAL 15
@@ -145,6 +149,8 @@
 #define ITEM_FAB_MAIL 131
 #define ITEM_RETRO_MAIL 132
 
+#define FIRST_MAIL_INDEX ITEM_ORANGE_MAIL
+
 // Berries
 #define ITEM_CHERI_BERRY 133
 #define ITEM_CHESTO_BERRY 134
@@ -189,9 +195,15 @@
 #define ITEM_LANSAT_BERRY 173
 #define ITEM_STARF_BERRY 174
 #define ITEM_ENIGMA_BERRY 175
-#define ITEM_0B0 176
-#define ITEM_0B1 177
-#define ITEM_0B2 178
+
+#define FIRST_BERRY_INDEX ITEM_CHERI_BERRY
+#define LAST_BERRY_INDEX  ITEM_ENIGMA_BERRY
+
+#define ITEM_UNUSED_BERRY_1 176
+#define ITEM_UNUSED_BERRY_2 177
+#define ITEM_UNUSED_BERRY_3 178
+
+#define MAX_BERRY_INDEX ITEM_UNUSED_BERRY_3
 
 // Battle Held items
 #define ITEM_BRIGHT_POWDER 179
@@ -369,65 +381,6 @@
 #define ITEM_HM07 345
 #define ITEM_HM08 346
 
-#define ITEM_TM01_FOCUS_PUNCH ITEM_TM01
-#define ITEM_TM02_DRAGON_CLAW ITEM_TM02
-#define ITEM_TM03_WATER_PULSE ITEM_TM03
-#define ITEM_TM04_CALM_MIND ITEM_TM04
-#define ITEM_TM05_ROAR ITEM_TM05
-#define ITEM_TM06_TOXIC ITEM_TM06
-#define ITEM_TM07_HAIL ITEM_TM07
-#define ITEM_TM08_BULK_UP ITEM_TM08
-#define ITEM_TM09_BULLET_SEED ITEM_TM09
-#define ITEM_TM10_HIDDEN_POWER ITEM_TM10
-#define ITEM_TM11_SUNNY_DAY ITEM_TM11
-#define ITEM_TM12_TAUNT ITEM_TM12
-#define ITEM_TM13_ICE_BEAM ITEM_TM13
-#define ITEM_TM14_BLIZZARD ITEM_TM14
-#define ITEM_TM15_HYPER_BEAM ITEM_TM15
-#define ITEM_TM16_LIGHT_SCREEN ITEM_TM16
-#define ITEM_TM17_PROTECT ITEM_TM17
-#define ITEM_TM18_RAIN_DANCE ITEM_TM18
-#define ITEM_TM19_GIGA_DRAIN ITEM_TM19
-#define ITEM_TM20_SAFEGUARD ITEM_TM20
-#define ITEM_TM21_FRUSTRATION ITEM_TM21
-#define ITEM_TM22_SOLARBEAM ITEM_TM22
-#define ITEM_TM23_IRON_TAIL ITEM_TM23
-#define ITEM_TM24_THUNDERBOLT ITEM_TM24
-#define ITEM_TM25_THUNDER ITEM_TM25
-#define ITEM_TM26_EARTHQUAKE ITEM_TM26
-#define ITEM_TM27_RETURN ITEM_TM27
-#define ITEM_TM28_DIG ITEM_TM28
-#define ITEM_TM29_PSYCHIC ITEM_TM29
-#define ITEM_TM30_SHADOW_BALL ITEM_TM30
-#define ITEM_TM31_BRICK_BREAK ITEM_TM31
-#define ITEM_TM32_DOUBLE_TEAM ITEM_TM32
-#define ITEM_TM33_REFLECT ITEM_TM33
-#define ITEM_TM34_SHOCK_WAVE ITEM_TM34
-#define ITEM_TM35_FLAMETHROWER ITEM_TM35
-#define ITEM_TM36_SLUDGE_BOMB ITEM_TM36
-#define ITEM_TM37_SANDSTORM ITEM_TM37
-#define ITEM_TM38_FIRE_BLAST ITEM_TM38
-#define ITEM_TM39_ROCK_TOMB ITEM_TM39
-#define ITEM_TM40_AERIAL_ACE ITEM_TM40
-#define ITEM_TM41_TORMENT ITEM_TM41
-#define ITEM_TM42_FACADE ITEM_TM42
-#define ITEM_TM43_SECRET_POWER ITEM_TM43
-#define ITEM_TM44_REST ITEM_TM44
-#define ITEM_TM45_ATTRACT ITEM_TM45
-#define ITEM_TM46_THIEF ITEM_TM46
-#define ITEM_TM47_STEEL_WING ITEM_TM47
-#define ITEM_TM48_SKILL_SWAP ITEM_TM48
-#define ITEM_TM49_SNATCH ITEM_TM49
-#define ITEM_TM50_OVERHEAT ITEM_TM50
-#define ITEM_HM01_CUT ITEM_HM01
-#define ITEM_HM02_FLY ITEM_HM02
-#define ITEM_HM03_SURF ITEM_HM03
-#define ITEM_HM04_STRENGTH ITEM_HM04
-#define ITEM_HM05_FLASH ITEM_HM05
-#define ITEM_HM06_ROCK_SMASH ITEM_HM06
-#define ITEM_HM07_WATERFALL ITEM_HM07
-#define ITEM_HM08_DIVE ITEM_HM08
-
 // Unknown
 #define ITEM_15B 347
 #define ITEM_15C 348
@@ -465,10 +418,10 @@
 #define ITEM_OLD_SEA_MAP 376
 
 #define ITEMS_COUNT 377
-#define ITEM_FIELD_ARROW ITEMS_COUNT
 
-#define FIRST_BERRY_INDEX             ITEM_CHERI_BERRY
-#define LAST_BERRY_INDEX              ITEM_ENIGMA_BERRY
+// A special item id associated with "Cancel"/"Exit" etc. in a list of items or decorations
+// Its icon is defined at ITEMS_COUNT as the "return to field" arrow
+#define ITEM_LIST_END 0xFFFF
 
 // Range of berries given out by various NPCS
 #define FIRST_BERRY_MASTER_BERRY      ITEM_POMEG_BERRY
@@ -488,7 +441,9 @@
 #define NUM_ROUTE_114_MAN_BERRIES         (LAST_ROUTE_114_MAN_BERRY - FIRST_ROUTE_114_MAN_BERRY + 1)
 #define NUM_ROUTE_114_MAN_BERRIES_SKIPPED (FIRST_ROUTE_114_MAN_BERRY - FIRST_BERRY_INDEX)
 
-#define ITEM_TO_BERRY(itemId)(((itemId - FIRST_BERRY_INDEX) + 1))
+#define ITEM_TO_BERRY(itemId)(((itemId) - FIRST_BERRY_INDEX) + 1)
+#define ITEM_TO_MAIL(itemId)((itemId) - FIRST_MAIL_INDEX)
+#define MAIL_NONE 0xFF
 
 #define NUM_TECHNICAL_MACHINES 50
 #define NUM_HIDDEN_MACHINES     8
@@ -506,7 +461,22 @@
 #define GOOD_ROD  1
 #define SUPER_ROD 2
 
-// Check if the item is one that can be used on a Pokemon.
-#define ITEM_HAS_EFFECT(item) ((item) >= ITEM_POTION && (item) <= ITEM_0B2)
+// Secondary IDs for bikes
+#define MACH_BIKE 0
+#define ACRO_BIKE 1
+
+// Item type IDs (used to determine the exit callback)
+#define ITEM_USE_MAIL        0
+#define ITEM_USE_PARTY_MENU  1
+#define ITEM_USE_FIELD       2
+#define ITEM_USE_PBLOCK_CASE 3
+#define ITEM_USE_BAG_MENU    4 // No exit callback, stays in bag menu
+
+// Item battle usage IDs (only checked to see if nonzero)
+#define ITEM_B_USE_MEDICINE 1
+#define ITEM_B_USE_OTHER    2
+
+// Check if the item is one that can be used on a Pokémon.
+#define ITEM_HAS_EFFECT(item) ((item) >= ITEM_POTION && (item) <= MAX_BERRY_INDEX)
 
 #endif  // GUARD_CONSTANTS_ITEMS_H
