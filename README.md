@@ -126,3 +126,11 @@ This includes: `"TM01", "PC", "EV"`, any two uppercase characters surrounded by 
 ## See also
 
 For contacts and other pret projects, see [pret.github.io](https://pret.github.io/).
+
+
+To-Do:
+1. Infinite TM's    https://github.com/pret/pokeemerald/wiki/Infinite-TM-usage
+2. Use HMs Without Any Pokemon in your Party Knowing Them    https://github.com/pret/pokeemerald/wiki/Use-HMs-Without-Any-Pokemon-in-your-Party-Knowing-Them
+3. Implement Deoxys Forms    https://github.com/pret/pokeemerald/wiki/How-to-add-a-new-Pokémon-species#1-edit-the-sprites
+4. Don't reset pushable boulders when moving around the map    https://www.pokecommunity.com/threads/simple-modifications-directory.416647/post-10815220
+5. Fixes: Auto-Run, Repel Prompt, Followers & Lighting
