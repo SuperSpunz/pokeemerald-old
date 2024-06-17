@@ -2621,16 +2621,13 @@ static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
                 // If Mon already knows FLY and the HM is in the bag, prevent it from being added to action list
                 if (sFieldMoves[j] != MOVE_FLY || !CheckBagHasItem(ITEM_HM02, 1))
                 {
-                    //If Mon already knows FLASH and the HM is in the bag, prevent it from being added to action list
-                    if (sFieldMoves[j] != MOVE_FLASH || !CheckBagHasItem(ITEM_HM05, 1))
+                    //If Mon already knows CUT and the HM is in the bag, prevent it from being added to action list
+                    if (sFieldMoves[j] != MOVE_CUT || !CheckBagHasItem(ITEM_HM01, 1))
                     {
-                        //If Mon already knows CUT and the HM is in the bag, prevent it from being added to action list
-                        if (sFieldMoves[j] != MOVE_CUT || !CheckBagHasItem(ITEM_HM01, 1))
-                        {
                         AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, j + MENU_FIELD_MOVES);
-                        }
                     }
                 }
+                
                 break;
             }
         }
@@ -2639,9 +2636,6 @@ static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
     // If Mon can learn HM02 and action list consists of < 4 moves, add FLY to action list
     if (sPartyMenuInternal->numActions < 5 && CanMonLearnTMHM(&mons[slotId], ITEM_HM02 - ITEM_TM01) && CheckBagHasItem(ITEM_HM02, 1)) 
         AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, 5 + MENU_FIELD_MOVES);
-    // If Mon can learn HM05 and action list consists of < 4 moves, add FLASH to action list
-    if (sPartyMenuInternal->numActions < 5 && CanMonLearnTMHM(&mons[slotId], ITEM_HM05 - ITEM_TM01) && CheckBagHasItem(ITEM_HM05, 1)) 
-        AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, 1 + MENU_FIELD_MOVES);
     // If Mon can learn HM01 and action list consists of < 4 moves, add CUT to action list
     if (sPartyMenuInternal->numActions < 5 && CanMonLearnTMHM(&mons[slotId], ITEM_HM05 - ITEM_TM01) && CheckBagHasItem(ITEM_HM01, 1)) 
         AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, 0 + MENU_FIELD_MOVES);
