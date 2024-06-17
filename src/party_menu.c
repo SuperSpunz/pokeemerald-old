@@ -2638,7 +2638,7 @@ static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
     if (sPartyMenuInternal->numActions < 5 && CanMonLearnTMHM(&mons[slotId], ITEM_HM02 - ITEM_TM01) && CheckBagHasItem(ITEM_HM02, 1)) 
         AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, 5 + MENU_FIELD_MOVES);
     // If Mon can learn HM01 and action list consists of < 4 moves, add CUT to action list
-    if (sPartyMenuInternal->numActions < 5 && CanMonLearnTMHM(&mons[slotId], ITEM_HM05 - ITEM_TM01) && CheckBagHasItem(ITEM_HM01, 1)) 
+    if (sPartyMenuInternal->numActions < 5 && CanMonLearnTMHM(&mons[slotId], ITEM_HM01 - ITEM_TM01) && CheckBagHasItem(ITEM_HM01, 1)) 
         AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, 0 + MENU_FIELD_MOVES);
 
     if (!InBattlePike())
