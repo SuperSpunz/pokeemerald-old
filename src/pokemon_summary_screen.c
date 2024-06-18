@@ -2726,6 +2726,11 @@ static void PrintNotEggInfo(void)
     struct PokeSummary *summary = &sMonSummaryScreen->summary;
     u16 dexNum = SpeciesToPokedexNum(summary->species);
 
+    if (summary->species == SPECIES_DEOXYS_NORMAL || summary->species == SPECIES_DEOXYS_ATTACK || summary->species == SPECIES_DEOXYS_DEFENSE || summary->species == SPECIES_DEOXYS_SPEED)
+    {
+        dexNum = 0x0182;
+    }
+    
     if (dexNum != 0xFFFF)
     {
         StringCopy(gStringVar1, &gText_NumberClear01[0]);
@@ -3881,12 +3886,12 @@ static u8 LoadMonGfxAndSprite(struct Pokemon *mon, s16 *state)
     case 0:
         if (gMain.inBattle)
         {
-            if (ShouldIgnoreDeoxysForm(3, sMonSummaryScreen->curMonIndex))
+            /*if (ShouldIgnoreDeoxysForm(3, sMonSummaryScreen->curMonIndex))
                 HandleLoadSpecialPokePic_DontHandleDeoxys(&gMonFrontPicTable[summary->species2],
                                                           gMonSpritesGfxPtr->sprites.ptr[B_POSITION_OPPONENT_LEFT],
                                                           summary->species2,
                                                           summary->pid);
-            else
+            else*/
                 HandleLoadSpecialPokePic_2(&gMonFrontPicTable[summary->species2],
                                            gMonSpritesGfxPtr->sprites.ptr[B_POSITION_OPPONENT_LEFT],
                                            summary->species2,
@@ -3901,11 +3906,11 @@ static u8 LoadMonGfxAndSprite(struct Pokemon *mon, s16 *state)
                                                gMonSpritesGfxPtr->sprites.ptr[B_POSITION_OPPONENT_LEFT],
                                                summary->species2,
                                                summary->pid);
-                else
+                /*  else
                     HandleLoadSpecialPokePic_DontHandleDeoxys(&gMonFrontPicTable[summary->species2],
                                                               gMonSpritesGfxPtr->sprites.ptr[B_POSITION_OPPONENT_LEFT],
                                                               summary->species2,
-                                                              summary->pid);
+                                                              summary->pid);    */
             }
             else
             {
@@ -3914,11 +3919,11 @@ static u8 LoadMonGfxAndSprite(struct Pokemon *mon, s16 *state)
                                                 MonSpritesGfxManager_GetSpritePtr(MON_SPR_GFX_MANAGER_A, B_POSITION_OPPONENT_LEFT),
                                                 summary->species2,
                                                 summary->pid);
-                else
+                /*  else
                     HandleLoadSpecialPokePic_DontHandleDeoxys(&gMonFrontPicTable[summary->species2],
                                                               MonSpritesGfxManager_GetSpritePtr(MON_SPR_GFX_MANAGER_A, B_POSITION_OPPONENT_LEFT),
                                                               summary->species2,
-                                                              summary->pid);
+                                                              summary->pid);    */
             }
         }
         (*state)++;

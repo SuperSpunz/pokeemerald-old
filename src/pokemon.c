@@ -2642,7 +2642,7 @@ static void CreateEventMon(struct Pokemon *mon, u16 species, u8 level, u8 fixedI
 }
 
 // If FALSE, should load this game's Deoxys form. If TRUE, should load normal Deoxys form
-bool8 ShouldIgnoreDeoxysForm(u8 caseId, u8 battlerId)
+/*  bool8 ShouldIgnoreDeoxysForm(u8 caseId, u8 battlerId)
 {
     switch (caseId)
     {
@@ -2696,9 +2696,9 @@ bool8 ShouldIgnoreDeoxysForm(u8 caseId, u8 battlerId)
     }
 
     return TRUE;
-}
+}   */
 
-static u16 GetDeoxysStat(struct Pokemon *mon, s32 statId)
+/*  static u16 GetDeoxysStat(struct Pokemon *mon, s32 statId)
 {
     s32 ivVal, evVal;
     u16 statValue = 0;
@@ -2713,9 +2713,9 @@ static u16 GetDeoxysStat(struct Pokemon *mon, s32 statId)
     nature = GetNature(mon);
     statValue = ModifyStatByNature(nature, statValue, (u8)statId);
     return statValue;
-}
+}   */
 
-/*void SetDeoxysStats(void)
+/*  void SetDeoxysStats(void)
 {
     s32 i, value;
 
@@ -2741,8 +2741,7 @@ static u16 GetDeoxysStat(struct Pokemon *mon, s32 statId)
         value = GetMonData(mon, MON_DATA_SPDEF, NULL);
         SetMonData(mon, MON_DATA_SPDEF, &value);
     }
-}
-*/
+}   */
 u16 GetUnionRoomTrainerPic(void)
 {
     u8 linkId;
@@ -3656,28 +3655,28 @@ u32 GetMonData3(struct Pokemon *mon, s32 field, u8 *data)
         ret = mon->maxHP;
         break;
     case MON_DATA_ATK:
-        ret = GetDeoxysStat(mon, STAT_ATK);
-        if (!ret)
+        // ret = GetDeoxysStat(mon, STAT_ATK);
+        // if (!ret)
             ret = mon->attack;
         break;
     case MON_DATA_DEF:
-        ret = GetDeoxysStat(mon, STAT_DEF);
-        if (!ret)
+        // ret = GetDeoxysStat(mon, STAT_DEF);
+        // if (!ret)
             ret = mon->defense;
         break;
     case MON_DATA_SPEED:
-        ret = GetDeoxysStat(mon, STAT_SPEED);
-        if (!ret)
+        // ret = GetDeoxysStat(mon, STAT_SPEED);
+        // if (!ret)
             ret = mon->speed;
         break;
     case MON_DATA_SPATK:
-        ret = GetDeoxysStat(mon, STAT_SPATK);
-        if (!ret)
+        // ret = GetDeoxysStat(mon, STAT_SPATK);
+        // if (!ret)
             ret = mon->spAttack;
         break;
     case MON_DATA_SPDEF:
-        ret = GetDeoxysStat(mon, STAT_SPDEF);
-        if (!ret)
+        // ret = GetDeoxysStat(mon, STAT_SPDEF);
+        // if (!ret)
             ret = mon->spDefense;
         break;
     case MON_DATA_ATK2:
