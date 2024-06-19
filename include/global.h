@@ -16,6 +16,8 @@
 #include "constants/easy_chat.h"
 #include "constants/trainer_hill.h"
 
+#define BUGFIX
+
 // Prevent cross-jump optimization.
 #define BLOCK_CROSS_JUMP asm("");
 
