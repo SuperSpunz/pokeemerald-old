@@ -13,3 +13,4 @@ For contacts and other pret projects, see [pret.github.io](https://pret.github.i
 ## Bugs:
 
 No backsprite on Speed Form Deoxys
+No Icon for Speed Form Deoxys in Party Menu
