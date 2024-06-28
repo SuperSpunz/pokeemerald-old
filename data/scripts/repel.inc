@@ -30,4 +30,3 @@ Text_RepelWoreOff:
 Text_RepelWoreOff_UseAnother:
 	.string "REPEL's effect wore off…\n"
 	.string "Use another?$"
-	
