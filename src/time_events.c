@@ -8,6 +8,7 @@
 #include "rtc.h"
 #include "script.h"
 #include "task.h"
+#include "pokemon_storage_system.h"
 
 static u32 GetMirageRnd(void)
 {
@@ -43,10 +44,20 @@ bool8 IsMirageIslandPresent(void)
 {
     u16 rnd = GetMirageRnd() >> 16;
     int i;
+    int j;
 
     for (i = 0; i < PARTY_SIZE; i++)
         if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES) && (GetMonData(&gPlayerParty[i], MON_DATA_PERSONALITY) & 0xFFFF) == rnd)
             return TRUE;
+
+    for (i = 0; i < TOTAL_BOXES_COUNT; i++)
+    {
+        for (j = 0; j < IN_BOX_COUNT; j++)
+        {
+            if (GetBoxMonData(&gPokemonStoragePtr->boxes[i][j], MON_DATA_SPECIES) && (GetBoxMonData(&gPokemonStoragePtr->boxes[i][j], MON_DATA_PERSONALITY) & 0xFFFF) == rnd)
+                return TRUE;
+        }
+    }
 
     return FALSE;
 }
